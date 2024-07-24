@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import ProductDisplay from "../page/ProductDisplay";
 
 
 function Product() {
@@ -7,23 +8,32 @@ function Product() {
 
     const getProducts = async () => {
 
-        try{
+        try {
             const url = 'https://dummyjson.com/products'
             const response = await fetch(url)
             const data = await response.json()
-            // console.log(data.products)
+            console.log(data.products)
             setProducts(data.products)
-        } catch(err){
+        } catch (err) {
             console.log("fetch error")
         }
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         getProducts()
     }, [])
 
     return (
-        <h1>product</h1>
+        <div>
+            <h1>Products</h1>
+            {products.map((product) => (
+                <div key={product.id}>
+                     <ProductDisplay  product={product}/>
+                </div>
+            ))}
+
+        </div>
+
     )
 }
 
