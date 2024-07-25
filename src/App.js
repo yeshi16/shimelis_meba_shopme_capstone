@@ -7,12 +7,11 @@ import Product from "./component/Product";
 function App() {
   return (
     <div className="App">
-      {/* <Nav />
+      <Nav />
       <Routes>
         <Route path='/' element={<Home/>} />
         <Route path='/products' element={<Product/>} />
-      </Routes> */}
-      <Product/>
+      </Routes>
     </div>
   );
 }

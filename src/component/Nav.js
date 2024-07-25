@@ -1,14 +1,14 @@
 import {Link} from 'react-router-dom'
 
-function Nav(props) {
+function Nav() {
     return(
         <div>
-            <link to='/'>
+            <Link to='/'>
                 <div>Home</div>
-            </link>
-            <link to='/products'>
+            </Link>
+            <Link to='/products'>
                 <div>Products</div>
-            </link>
+            </Link>
         </div>
     )
 }
