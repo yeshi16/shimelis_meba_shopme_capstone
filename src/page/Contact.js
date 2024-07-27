@@ -1,17 +1,44 @@
 import React, { useState } from "react";
 
 function Contact() {
+    const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [message, setMessage] = useState('')
 
-    const handleSubmit = (e) => {
+    const postContact = async () => {
+
+        const postData = {
+            name: name,
+            email: email,
+            message: message,
+        }
+        try{
+            const response = await fetch('http://localhost:4000/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                  },
+                  body: JSON.stringify(postData)
+            })
+
+            const data = await response.json()
+            console.log(data)
+
+        } catch (e) {
+            console.log('Error registering')
+        }
+    }
+
+
+    const handleSubmit = async (e) => {
         e.preventDefault()
 
-        console.log(email + " " + message)
-
-        if(!email || !message){
-            alert('Add Email and Message')
+        if(!name || !email || !message){
+            alert('Add Name, Email and Message')
         }
+
+        console.log(name + " " + email + " " + message)
+        await postContact();
     }
 
     return (
@@ -19,6 +46,16 @@ function Contact() {
             <h1>Contact Us</h1>
 
             <form>
+            <label>Name</label>
+                <input
+                    type='text'
+                    id='name'
+                    name='name'
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                />
+
+
                 <label>Email</label>
                 <input
                     type='text'

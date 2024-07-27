@@ -42,6 +42,7 @@ import cors from 'cors';
 import { connectDb } from './db/conn.mjs';
 import userRoute from './routes/user.js';
 import registerRoute from './routes/register.js';
+import contactRoute from './routes/contact.js';
 import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
 
@@ -61,6 +62,7 @@ app.use(cors({
 
 app.use('/user', userRoute);
 app.use('/register', registerRoute);
+app.use('/contact', contactRoute);
 
 app.get('/', (req, res) => {
     res.send('back-end running');
