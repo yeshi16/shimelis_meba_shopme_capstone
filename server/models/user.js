@@ -8,6 +8,10 @@ const userSchema = new mongoose.Schema({
     email: {
         type: String,
         required: true
+    },
+    entryDate: {
+        type: Date,
+        default: Date.now
     }
 })
 
