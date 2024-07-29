@@ -4,16 +4,16 @@ import { ObjectId } from 'mongodb';
 const router = express.Router()
 
 router.get('/', async (req, res) => {
-    // try {
-    //     const db = getDb()
-    //     const users = await db.collection('users').find().toArray();
-    //     res.json(users)
-    // } catch (err) {
-    //     console.log('Error fetching users from database:')
+    try {
+        const db = getDb()
+        const cartItem = await db.collection('cart').find().toArray();
+        res.json(cartItem)
+    } catch (err) {
+        console.log('Error fetching cart from database:')
 
-    // }
+    }
 
-    res.send('Cart Page')
+    // res.send('Cart Page')
 });
 
 // create new cartItem

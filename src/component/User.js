@@ -71,10 +71,10 @@ function User() {
             const data = await getUsers();
             console.log(data);
             setUsers(data);
-        };
+        }
 
         fetchUsers();
-    }, []);
+    }, [])
 
     const getUsers = async () => {
         try {

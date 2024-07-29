@@ -12,20 +12,20 @@ function Contact() {
             email: email,
             message: message,
         }
-        try{
+        try {
             const response = await fetch('http://localhost:4000/contact', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                  },
-                  body: JSON.stringify(postData)
+                },
+                body: JSON.stringify(postData)
             })
 
             const data = await response.json()
             console.log(data)
 
         } catch (e) {
-            console.log('Error registering')
+            console.log('Contact message error')
         }
     }
 
@@ -33,12 +33,17 @@ function Contact() {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        if(!name || !email || !message){
+        if (!name || !email || !message) {
             alert('Add Name, Email and Message')
+            return
         }
 
         console.log(name + " " + email + " " + message)
         await postContact();
+
+        setName('');
+        setEmail('');
+        setMessage('');
     }
 
     return (
@@ -46,7 +51,7 @@ function Contact() {
             <h1>Contact Us</h1>
 
             <form>
-            <label>Name</label>
+                <label>Name</label>
                 <input
                     type='text'
                     id='name'

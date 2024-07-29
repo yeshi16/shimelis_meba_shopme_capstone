@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ProductDisplay from "../page/ProductDisplay";
 import SearchInput from "../page/SearchInput";
+import CartItem from "../page/CartItem";
 
 
 function Product() {
@@ -9,6 +10,7 @@ function Product() {
     // states for product fetched and search word
     const [products, setProducts] = useState([])
     const [search, setSearch] = useState('');
+  
 
     const getProducts = async (searchWord) => {
 
@@ -24,14 +26,14 @@ function Product() {
             }
             const response = await fetch(url)
             const data = await response.json()
-            console.log(data.products)
+            // console.log(data.products)
             setProducts(data.products)
         } catch (err) {
             console.log("fetch error")
         }
     }
 
-    //getProducts has empty string at first to fetch products
+    //getProducts has empty string at first to fetch products for the searchword props
     useEffect(() => {
         getProducts('')
     }, [])
@@ -42,6 +44,8 @@ function Product() {
         window.scrollTo(0,0)
 
     };
+     
+   
 
     return (
         <div>
@@ -51,12 +55,13 @@ function Product() {
             {products.map((product) => (
                 <div key={product.id}>
                     <ProductDisplay product={product} />
+                    <CartItem title={product.title} price={product.price} thumbnail={product.thumbnail} />
                 </div>
             ))}
 
             {products.length > 0 && (
                 <Link to='/products' onClick={clearSearch}>
-                    <h1>Get all Products</h1>
+                    <h1>Keep shopping</h1>
                 </Link>
             )}
         </div>

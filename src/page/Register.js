@@ -40,6 +40,10 @@ function Contact() {
 
         console.log(email + " " + name);
         await postUser();
+
+        setName('')
+        setEmail('')
+        
     }
 
     return (

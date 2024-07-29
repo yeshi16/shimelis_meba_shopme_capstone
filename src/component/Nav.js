@@ -3,7 +3,7 @@ import { useContext } from 'react'
 import Context from './Context'
 
 function Nav() {
-    const userData = useContext(Context)
+    const cartData = useContext(Context)
     return(
         <div>
             <Link to='/'>
@@ -19,8 +19,9 @@ function Nav() {
                 <div>Contact Us</div>
             </Link>
             <Link to='/cart'>
-                <div>Cart: {userData.cartItems}</div>
+                <div>Cart: {cartData.cartItems}</div>
             </Link>
+
         </div>
     )
 }
