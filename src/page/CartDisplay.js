@@ -1,22 +1,34 @@
 import React from "react";
 
-function CartDisplay({title, price, thumbnail, quantity}){
+function CartDisplay({ id, title, price, thumbnail, quantity, description, upadateQue, handleQua }) {
+
+
 
     return (
 
-        <div>
-            <h4>{title}</h4>
-            <img src={thumbnail} alt={title} />
-            <h4>${price}</h4>
-            <p>Quantity: {quantity}</p>
-            <select>
-            <label>Quantity</label> 
-                <option value='1' selected>1</option>
-                <option value='2'>2</option>
-                <option value='3'>3</option>
-                <option value='4'>4</option>
-                <option value='5'>5</option>
-           </select>
+        <div className="card mb-3 backgroundContainer" style={{ color: "#0c4151", maxWidth: "700px", margin: "auto", height: '300px' }}>
+            <div className="row g-0">
+                <div className="col-md-4">
+                    <img src={thumbnail} className="img-fluid rounded-start" alt={title} />
+                </div>
+                <div className="col-md-8">
+                    <div className="card-body">
+                        <h5 className="card-title">{title}</h5>
+                        <p className="card-text">{description}</p>
+                        <p className="card-text"><small className="text-body-secondary">{price}</small></p>
+                        <div className="dropdown">
+                            <button className="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Quantity: {quantity}
+                            </button>
+                            <ul className="dropdown-menu">
+                                <li><a value={id} className="dropdown-item" onClick={(e)=>{handleQua(e, 1, id)}}>1</a></li>
+                                <li><a value={id} className="dropdown-item" onClick={(e)=>{handleQua(e, 2, id)}}>2</a></li>
+                                <li><a value={id} className="dropdown-item" onClick={(e)=>{handleQua(e, 3, id)}}>3</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }

@@ -8,6 +8,7 @@ import Cart from "./Cart"
 import ProductDisplay from "../page/ProductDisplay";
 import Contact from "../page/Contact";
 import Register from "../page/Register"
+import Footer from "../page/Footer";
 
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 
@@ -33,6 +34,7 @@ function ReactRoutes() {
                 <Route path='/register' element={<Register />} />
                 
             </Routes>
+            <Footer/>
 
         </div>
     )

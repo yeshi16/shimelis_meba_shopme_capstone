@@ -16,21 +16,21 @@ router.get('/', async (req, res) => {
     // res.send('Cart Page')
 });
 
-// create new cartItem
+// create new cartItem (add item to cart)
 router.post('/', async (req, res) => {
-    const { title, price, thumbnail, quantity } = req.body
+    const { title, price, thumbnail, quantity, description } = req.body
 
     try {
         const db = getDb()
-        const newCartItem = await db.collection('cart').insertOne({ title, price, thumbnail, quantity })
+        const newCartItem = await db.collection('cart').insertOne({ title, price, thumbnail, description, quantity })
         res.json({ message: 'Item added to cart' })
     } catch (err) {
         console.log('Error adding cartItem')
     }
 })
 
-// change quantity in cartitem
-router.patch('/:id', async (req, res) => {
+// change quantity in cart item
+router.put('/:id', async (req, res) => {
     try {
         const db = getDb()
         const itemId = req.params.id
@@ -40,7 +40,9 @@ router.patch('/:id', async (req, res) => {
             title: cartItem.title,
             price: cartItem.price,
             thumbnail: cartItem.thumbnail,
-            quantity: cartItem.quantity + req.body.quantity
+            quantity: cartItem.quantity + req.body.quantity,
+            description: cartItem.description
+
         }
         await db.collection('cart').updateOne({ _id: new ObjectId(itemId) }, { $set: updateCartItem })
         // console.log(cartItem)
@@ -52,9 +54,7 @@ router.patch('/:id', async (req, res) => {
 
 
 
-
-
-// // delete cart Item
+// delete cart Item
 router.delete('/:id', async (req, res) => {
 
     const db = getDb()

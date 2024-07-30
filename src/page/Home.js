@@ -4,7 +4,6 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 import CarouselComponent from "./Carousel";
 import NavHome from "./NavHome";
-import Footer from "./Footer"
 
 
 function Home() {
@@ -13,8 +12,6 @@ function Home() {
     <div className="navHome backgroundContainer">
       <NavHome />
       <CarouselComponent />
-      <br/> <br/>
-      <Footer />
     </div>
   )
 

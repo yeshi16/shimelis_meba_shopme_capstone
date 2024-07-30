@@ -1,6 +1,6 @@
 import React from "react";
 
-function CartItem({title, price, thumbnail}) {
+function CartItem({title, price, thumbnail, description}) {
 
     const postCart = async () => {
 
@@ -8,11 +8,13 @@ function CartItem({title, price, thumbnail}) {
             title: title,
             price: price,
             thumbnail: thumbnail,
+            description: description,
             quantity:  1
+            
         }
 
         try {
-            const response = await fetch('http://localhost:4000/cartssss', {
+            const response = await fetch('http://localhost:4000/cart', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -37,7 +39,8 @@ function CartItem({title, price, thumbnail}) {
 
      
     return (
-        <button type='submit' onClick={handleSubmit}>Add to Cart</button>
+        <button type="button" className="btn " onClick={handleSubmit}>Add to Cart</button>
+       
     )
 }
 
