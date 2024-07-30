@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Footer from "../page/Footer"
 
 function Contact() {
     const [name, setName] = useState('')
@@ -47,39 +48,53 @@ function Contact() {
     }
 
     return (
-        <div>
-            <h1>Contact Us</h1>
+        <div  className="backgroundContainer">
+            <h1 className="display-6 text-center">Contact us</h1>
 
-            <form>
-                <label>Name</label>
-                <input
-                    type='text'
-                    id='name'
-                    name='name'
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                />
+            <form className="mx-auto p-2" style={{ width: "200px;" }}>
 
+                <div class="mb-3">
+                    <label for="Input1" class="form-label">Name</label>
+                    <input
+                        type="text"
+                        className="form-control"
+                        id="Input1"
+                        placeholder="Name"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                    />
+                </div>
+              
+                <div class="mb-3">
+                    <label for="Input2" class="form-label">Name</label>
+                    <input
+                        type="text"
+                        className="form-control"
+                        id="Input2"
+                        placeholder="Email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                </div>
 
-                <label>Email</label>
-                <input
-                    type='text'
-                    id='email'
-                    name='email'
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                />
+             
 
-                <label>Message</label>
-                <textarea
-                    id='message'
-                    name='message'
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}>
-                </textarea>
-
-                <button type='submit' onClick={handleSubmit}>Submit</button>
+                <div class="mb-3">
+                    <label for="Textarea1" class="form-label">Message</label>
+                    <textarea
+                        placeholder="Type your message"
+                        className="form-control"
+                        id="Textarea1"
+                        rows="3"
+                        value={message}
+                        onChange={(e) => setMessage(e.target.value)}>
+                    </textarea>
+                </div>
+                
+                <button type="button" className="btn ">Submit</button>
             </form>
+            <br /><br />
+            <Footer />
         </div>
     )
 
