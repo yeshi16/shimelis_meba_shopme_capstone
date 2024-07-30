@@ -91,8 +91,11 @@ function Contact() {
             {/* <Link to='/products'>
                 Login
             </Link> */}
-            <br /><br />
+            {/* <br /><br /> */}
+            <div className="footerPos">
             <Footer />
+            </div>
+           
         </div>
     )
 

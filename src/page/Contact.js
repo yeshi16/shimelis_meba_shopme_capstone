@@ -93,8 +93,10 @@ function Contact() {
                 
                 <button type="button" className="btn ">Submit</button>
             </form>
-            <br /><br />
+           
+            <div className="footerPos">
             <Footer />
+            </div>
         </div>
     )
 

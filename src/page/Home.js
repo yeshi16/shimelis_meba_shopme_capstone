@@ -10,7 +10,7 @@ import Footer from "./Footer"
 function Home() {
 
   return (
-    <div className="navHome">
+    <div className="navHome backgroundContainer">
       <NavHome />
       <CarouselComponent />
       <br/> <br/>
