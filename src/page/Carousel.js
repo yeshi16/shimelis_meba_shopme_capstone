@@ -18,16 +18,17 @@ function CarouselComponent() {
           There are many varieties of fruit and vegetables available and many ways to prepare, cook and serve them.
           </p>
         </Carousel.Caption>
+
       </Carousel.Item>
 
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="/images/image5.jpeg"
-          alt="Second slide"
+          src="/images/images2New.jpg"
+          alt="Third slide"
         />
-        <Carousel.Caption>
-          <h5>Makeup</h5>
+        <Carousel.Caption  style={{ color: 'white', textShadow: '2px 2px 4px black' }}>
+        <h5>Makeup</h5>
           <p>Shop the best makeup now at ShopMe and earn points with every purchase!</p>
         </Carousel.Caption>
       </Carousel.Item>
@@ -35,7 +36,7 @@ function CarouselComponent() {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="/images/images2.jpeg"
+          src="/images/images2.jpg"
           alt="Second slide"
         />
         <Carousel.Caption style={{ color: 'white', textShadow: '2px 2px 4px black' }}>

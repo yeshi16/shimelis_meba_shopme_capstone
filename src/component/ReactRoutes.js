@@ -8,34 +8,32 @@ import Cart from "./Cart"
 import ProductDisplay from "../page/ProductDisplay";
 import Contact from "../page/Contact";
 import Register from "../page/Register"
-import { CartProvider } from './CartContext';
-import Login from "../page/Login";
+
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 
-function ReactRoutes() {   
-    
-// the nav is not going to show on home page
-const location = useLocation();
-  const showNav = location.pathname !== '/';
-  
+function ReactRoutes() {
+
+    // the nav is not going to show on home page
+    const location = useLocation();
+    const showNav = location.pathname !== '/';
+
     return (
         <div>
-            <CartProvider>
-            
-            {showNav && <Nav/>}
-                               
-                <Routes>
-                    <Route path='/' element={<Home />} />
-                    <Route path='/products' element={<Product />} />
-                    <Route path='/products/:id' element={<ProductDisplay />} />
-                    <Route path='/user' element={<User />} />
-                    <Route path='/cart' element={<Cart />} />
-                    <Route path='/contact' element={<Contact />} />
-                    <Route path='/register' element={<Register />} />
-                    <Route path='/login' element={<Login />} />
-                </Routes>
-            </CartProvider>
+
+            {showNav && <Nav />}
+
+            <Routes>
+                <Route path='/' element={<Home />} />
+                <Route path='/products' element={<Product />} />
+                <Route path='/products/:id' element={<ProductDisplay />} />
+                <Route path='/user' element={<User />} />
+                <Route path='/cart' element={<Cart />} />
+                <Route path='/contact' element={<Contact />} />
+                <Route path='/register' element={<Register />} />
+                
+            </Routes>
+
         </div>
     )
 }

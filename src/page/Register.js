@@ -49,7 +49,7 @@ function Contact() {
         setEmail('')
         
          // navigage to login page
-         navigate('/login')
+         navigate('/products')
     }
 
     return (
@@ -79,9 +79,9 @@ function Contact() {
             </form>
 
             {/* <p>Already Registered</p> */}
-            <Link to='/products'>
+            {/* <Link to='/products'>
                 Login
-            </Link>
+            </Link> */}
         </div>
     )
 

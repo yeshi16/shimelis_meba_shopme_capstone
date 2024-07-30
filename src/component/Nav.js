@@ -1,11 +1,11 @@
 import {Link} from 'react-router-dom'
-import { useContext } from 'react'
-import Context from './Context'
-import { CartContext } from './CartContext';
+// import { useContext } from 'react'
+// import Context from './Context'
+// import { CartContext } from './CartContext';
 
 function Nav() {
     // const cartData = useContext(Context)
-    const { incart } = useContext(CartContext);
+    // const { incart } = useContext(CartContext);
     return(
         <div>
             {/* <Link to='/'>
@@ -18,8 +18,11 @@ function Nav() {
                 <div>Contact Us</div>
             </Link>
             <Link to='/cart'>
-                <div>Cart: {incart.length}</div>
+                <div>Cart</div>
             </Link>
+            {/* <Link to='/cart'>
+                <div>Cart: {incart.length}</div>
+            </Link> */}
             {/* <Link to='/cart'>
                 <div>Cart: {cartData.cartItems}</div>
             </Link> */}

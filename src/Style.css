@@ -10,3 +10,23 @@
     object-fit: cover; /* Ensure images cover the area without stretching */
   }
   
+.navbar {
+    background-color: #e2fffa;
+}
+.navHome {
+    background-color: #e2fffa;
+}
+
+.d-inline-block {
+    margin-right: 10px;
+}
+
+.navText {
+    width: 800px;
+    color: #01212c;
+}
+.navDiv {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
