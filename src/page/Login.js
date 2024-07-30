@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import {Link, useNavigate} from 'react-router-dom'
 
 
-function Contact() {
+function Login() {
     const navigate = useNavigate()
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
@@ -10,23 +10,23 @@ function Contact() {
 
    
 
-    const postUser = async () => {
+    const getUser = async () => {
        
-        const postData = {
+        const userData = {
             name: name,
             email: email,
         }
         try{
-            const response = await fetch('http://localhost:4000/registerssss', {
-                method: 'POST',
+            const response = await fetch('http://localhost:4000/loginsss', {
+                method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
                   },
-                  body: JSON.stringify(postData)
+                  body: JSON.stringify(userData)
             })
 
             const data = await response.json()
-            // console.log(data)
+            console.log(data)
            
 
         } catch (e) {
@@ -43,18 +43,18 @@ function Contact() {
         }
 
         // console.log(email + " " + name);
-        await postUser();
+        await getUser();
 
         setName('')
         setEmail('')
         
          // navigage to login page
-         navigate('/login')
+         navigate('/products')
     }
 
     return (
         <div>
-            <h1>Register</h1>
+            <h1>Login</h1>
 
             <form>
             <label>Name</label>
@@ -75,16 +75,16 @@ function Contact() {
                     onChange={(e) => setEmail(e.target.value)}
                 />
 
-                <button type='submit' onClick={handleSubmit}>Register</button>
+                <button type='submit' onClick={handleSubmit}>Submit</button>
             </form>
 
-            {/* <p>Already Registered</p> */}
-            <Link to='/products'>
-                Login
+            <p>Didn't Register</p>
+            <Link to='/register'>
+                Register
             </Link>
         </div>
     )
 
 }
 
-export default Contact
+export default Login

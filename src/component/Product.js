@@ -16,7 +16,7 @@ function Product() {
 
         try {
             let url = ``
-            const baseUrl = 'https://dummyjson.com/products'
+            const baseUrl = 'https://dummyjson.com/productsssss'
 
             // if there is a search word use search url to fetch
             if (searchWord) {

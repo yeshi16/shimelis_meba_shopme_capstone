@@ -1,8 +1,6 @@
 import React from "react";
 
 function CartItem({title, price, thumbnail}) {
-    // const [titlt, setTitile] = useState('')
-    // const [price, setproce] = useState(0)
 
     const postCart = async () => {
 
@@ -14,7 +12,7 @@ function CartItem({title, price, thumbnail}) {
         }
 
         try {
-            const response = await fetch('http://localhost:4000/cart', {
+            const response = await fetch('http://localhost:4000/cartssss', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

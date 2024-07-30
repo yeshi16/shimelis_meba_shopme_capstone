@@ -6,7 +6,7 @@ function Footer() {
         <>
             <footer className="bootstrap-classes text-center text-secondary">
                 <div className="container border border-secondary-emphasis p-3">
-                    <pre>Data provided by News API <span>(<a href="https://dummyjson.com/">https://dummyjson.com/</a>)</span>,
+                    <pre>Data provided by Dummy Json <span>(<a href="https://dummyjson.com/">https://dummyjson.com/</a>)</span>,
                         a free API for retrieving information about various products.
                     </pre>
                 </div>

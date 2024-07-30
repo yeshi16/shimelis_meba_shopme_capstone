@@ -12,10 +12,10 @@ function CartDisplay({title, price, thumbnail, quantity}){
             <select>
             <label>Quantity</label> 
                 <option value='1' selected>1</option>
-                <option value='2'>1</option>
-                <option value='3'>1</option>
-                <option value='4'>1</option>
-                <option value='5'>1</option>
+                <option value='2'>2</option>
+                <option value='3'>3</option>
+                <option value='4'>4</option>
+                <option value='5'>5</option>
            </select>
         </div>
     )

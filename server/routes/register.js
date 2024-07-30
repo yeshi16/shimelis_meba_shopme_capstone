@@ -1,18 +1,8 @@
 import express from 'express'
 import { getDb } from '../db/conn.mjs'
-
 const router = express.Router()
 
 router.get('/', async (req, res) => {
-    // try {
-    //     const db = getDb()
-    //     const users = await db.collection('users').find().toArray();
-    //     res.json(users)
-    // } catch (err) {
-    //     console.log('Error fetching users from database:')
-        
-    // }
-
     res.send('register Page')
 });
 
@@ -32,5 +22,7 @@ router.post('/', async (req, res) => {
         console.log('Error adding user')
     }
 })
+
+
 
 export default router;

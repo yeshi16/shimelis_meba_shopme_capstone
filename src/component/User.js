@@ -78,7 +78,7 @@ function User() {
 
     const getUsers = async () => {
         try {
-            const response = await fetch('http://localhost:4000/user');
+            const response = await fetch('http://localhost:4000/usersss');
             const data = await response.json();
             console.log(data);
             return data;
