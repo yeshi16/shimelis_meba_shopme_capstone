@@ -1,8 +1,6 @@
 import React from "react";
 
-function CartDisplay({ id, title, price, thumbnail, quantity, description, upadateQue, handleQua }) {
-
-
+function CartDisplay({ id, title, price, thumbnail, quantity, description, handleDelete, handleQua }) {
 
     return (
 
@@ -17,8 +15,9 @@ function CartDisplay({ id, title, price, thumbnail, quantity, description, upada
                         <p className="card-text">{description}</p>
                         <p className="card-text"><small className="text-body-secondary">{price}</small></p>
                         <div className="dropdown">
+                        <button type="button" className="btn " onClick={() => handleDelete(id)}>Delete</button> &emsp;
                             <button className="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Quantity: {quantity}
+                            Add more ({quantity})
                             </button>
                             <ul className="dropdown-menu">
                                 <li><a value={id} className="dropdown-item" onClick={(e)=>{handleQua(e, 1, id)}}>1</a></li>

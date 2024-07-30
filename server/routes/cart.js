@@ -54,14 +54,17 @@ router.put('/:id', async (req, res) => {
 
 
 
-// delete cart Item
+//delete cart Item
 router.delete('/:id', async (req, res) => {
-
+    const itemId = req.params.id
     const db = getDb()
-    const cartItem = await db.collection('cart').findOne()
-
-    await db.collection('cart').deleteOne(cartItem)
-    res.json({ message: 'item deleted from cart' })
+    try {
+        const newCart = await db.collection('cart').deleteOne({_id: new ObjectId(itemId) })
+        // console.log(newCart)
+        res.json({message: "cart item deleted"})
+    } catch (error) {
+        
+    }
 
 })
 

@@ -91,7 +91,7 @@ function Contact() {
                     </textarea>
                 </div>
                 
-                <button type="button" className="btn ">Submit</button>
+                <button type="button" className="btn" onClick={handleSubmit}>Submit</button>
             </form>
            
             <div className="footerPos">

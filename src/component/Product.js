@@ -26,7 +26,7 @@ function Product() {
             }
             const response = await fetch(url)
             const data = await response.json()
-            console.log(data.products)
+            // console.log(data.products)
             setProducts(data.products)
         } catch (err) {
             console.log("fetch error")
