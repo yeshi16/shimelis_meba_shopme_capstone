@@ -1,3 +1,74 @@
+# ShopMe Online Store (MERN Capstone Project)
+This MERN Capstone Project demonstrates the creation of a full-stack web application using MongoDB, Express, React, and Node.js. The application aims to meet all technical requirements, showcase complexity and creativity, provide value to users, maintain high code quality, and include appropriate comments and documentation.
+Adhere to Agile principles and the Scrum framework. Perform stand-up sessions (with an instructor.Successfully track your project using  GitHub canban board.
+
+ShopMe, is your one-stop online store for all your needs! From makeup and clothing to food, appliances, and much more, we offer a wide variety of products to cater to every aspect of your life. Enjoy a seamless shopping experience with top-quality items and unbeatable deals.
+
+<p align="center">
+  <img src="./public/images/sc2.png">
+</p>
+
+
+<p align="left">
+  <img src="./public/sc3.png">
+</p>
+
+## Project Tracking
+
+This project was tracked using GitHub Projects. The GitHub Project Board was used to manage tasks, user stories, and progress.
+
+<p align="center">
+  <img src="./public/sc1.png">
+</p>
+
+## Features
+Users can interact with the application through various features as described below. These features enable users to explore and discover information about different product and use CRUD functionality in cart. 
+
+- **Add and remove items** from the cart
+- **Update item quantities** in the cart
+- **searching by topic using search word**  in product page
+- **Responsive design** using CSS and React components
+- **Multiple views/pages** using React Router
+- **State management** using React Hooks
+- **RESTful API** with full CRUD functionality
+- **Data fetching** using Axios or Fetch API
+- **Database management** using MongoDB and Mongoose
+
+
+
+
+## Technologies Used
+MERN, bootstrap and dummyJSON Api
+
+## Unsolved problems
+During the deployment process I encountered an issue with Netlify. Tried to drag and drop method and aslo using github. Below shows the links.
+
+## Build/Run
+### Install dependencies for front-end
+  - axios
+  - bootstrap
+  - express
+  - mongodb
+  - mongoos
+  - react
+  - react-bootstrap
+  - react-dom
+  - react-router-dom
+  - react-scripts
+  - web-vitals
+
+###  Install dependencies for back-end
+  - body-parser
+  - cors
+  - dotenv
+  - express
+  - nodemon
+  - mongodb
+  - mongoos
+
+# Getting Started with Create node 
+npm init -y 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

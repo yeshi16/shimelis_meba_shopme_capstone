@@ -51,17 +51,6 @@ function Cart() {
         updateQua(e, id, amount)
     }
 
-    // const handleDelete1 = (id) => {
-    //     const cartitem = incart.find((item) => item._id === id)
-    //     deleteCartItem(id, cartitem)
-    //         .then(() => {
-    //             setTimeout(() => {
-    //                 window.location.reload()
-    //             }, 1000)
-    //         })
-    //     setIncart(cartitem)
-    // }
-
     const handleDelete = async (id) => {
         try {
             await deleteCartItem(id);
