@@ -3,6 +3,7 @@ import { getDb } from '../db/conn.mjs'
 import { ObjectId } from 'mongodb';
 const router = express.Router()
 
+// get all cart items
 router.get('/', async (req, res) => {
     try {
         const db = getDb()
@@ -12,8 +13,6 @@ router.get('/', async (req, res) => {
         console.log('Error fetching cart from database:')
 
     }
-
-    // res.send('Cart Page')
 });
 
 // create new cartItem (add item to cart)
@@ -54,7 +53,7 @@ router.put('/:id', async (req, res) => {
 
 
 
-//delete cart Item
+//delete cart Item by id
 router.delete('/:id', async (req, res) => {
     const itemId = req.params.id
     const db = getDb()

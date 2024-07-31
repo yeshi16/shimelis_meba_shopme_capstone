@@ -2,6 +2,7 @@ import React from "react";
 
 function CartItem({title, price, thumbnail, description}) {
 
+    // adding items to cart from the product page
     const postCart = async () => {
 
         const postData = {

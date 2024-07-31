@@ -9,7 +9,7 @@ function Contact() {
     // const [Password, setPassword] = useState('')
 
 
-
+// add user to db 
     const postUser = async () => {
 
         const postData = {
@@ -17,7 +17,7 @@ function Contact() {
             email: email,
         }
         try {
-            const response = await fetch('http://localhost:4000/registerssss', {
+            const response = await fetch('http://localhost:4000/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -48,7 +48,7 @@ function Contact() {
         setName('')
         setEmail('')
 
-        // navigage to login page
+        // navigage to product page after submitting form
         navigate('/products')
     }
 

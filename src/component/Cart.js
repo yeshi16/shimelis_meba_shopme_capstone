@@ -8,6 +8,7 @@ function Cart() {
     const [incart, setIncart] = useState([])
     const [quantity, setQuantity] = useState(0)
 
+    // load all cart item 
     useEffect(() => {
         const fetchCart = async () => {
             const data = await getCart()
@@ -19,6 +20,7 @@ function Cart() {
 
     }, [])
 
+    // fetch cart item
     const getCart = async () => {
         try {
             const response = await fetch('http://localhost:4000/cart')
@@ -30,6 +32,7 @@ function Cart() {
         }
     }
 
+    // update quantity 
     const updateQua = (e, id, amount) => {
 
         e.preventDefault()
@@ -38,6 +41,7 @@ function Cart() {
         // console.log(cartitem, amount)
         updateCartItem(id, cartitem)
             .then(() => {
+                // reload window after updated cart item
                 setTimeout(() => {
                     window.location.reload()
                 }, 1000)
@@ -45,12 +49,15 @@ function Cart() {
 
     }
 
+    // change quantity when selected from drop down button 
+    // and update cart in DB
     const changeQua = (e, amount, id) => {
         setQuantity(amount)
         // console.log('amount ', amount)
         updateQua(e, id, amount)
     }
 
+    // delete cart item with id
     const handleDelete = async (id) => {
         try {
             await deleteCartItem(id);

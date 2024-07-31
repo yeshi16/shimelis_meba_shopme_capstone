@@ -6,6 +6,7 @@ function Contact() {
     const [email, setEmail] = useState('')
     const [message, setMessage] = useState('')
 
+    // adding contact message to db
     const postContact = async () => {
 
         const postData = {
@@ -23,7 +24,7 @@ function Contact() {
             })
 
             const data = await response.json()
-            console.log(data)
+            // console.log(data)
 
         } catch (e) {
             console.log('Contact message error')
@@ -39,7 +40,7 @@ function Contact() {
             return
         }
 
-        console.log(name + " " + email + " " + message)
+        // console.log(name + " " + email + " " + message)
         await postContact();
 
         setName('');

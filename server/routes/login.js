@@ -3,6 +3,7 @@ import { getDb } from '../db/conn.mjs'
 
 const router = express.Router()
 
+// get user by email
 router.get('/', async (req, res) => {
     try {
         const {email} = req.query

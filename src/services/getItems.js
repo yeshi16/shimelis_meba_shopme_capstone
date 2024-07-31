@@ -1,5 +1,6 @@
 import axios from "axios";
 
+// update cart in db
 export async function updateCartItem(id, newCartItem) {
 
 
@@ -10,6 +11,7 @@ export async function updateCartItem(id, newCartItem) {
    }
 }
 
+// delete cart in db
 export async function deleteCartItem(id){
      try {
          await axios.delete(`http://localhost:4000/cart/${id}`)

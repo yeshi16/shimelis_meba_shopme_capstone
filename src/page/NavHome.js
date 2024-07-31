@@ -10,7 +10,7 @@ function NavHome() {
         <>
             <nav className="navbar ">
                 <div className="container-fluid">
-                    <Link className="navbar-brand" href="#">
+                    <Link className="navbar-brand" to="/">
                         <img src="../images/ShopMe_logo.jpg" alt="Logo" width="70" height="50" className="d-inline-block align-text-center" />
                         ShopMe
                     </Link>
@@ -29,7 +29,7 @@ function NavHome() {
                     everything, shop at ShopMe!
                 </p>
             </div>
-            
+
         </>
     )
 }

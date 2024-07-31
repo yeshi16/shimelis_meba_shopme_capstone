@@ -5,12 +5,12 @@ Adhere to Agile principles and the Scrum framework. Perform stand-up sessions (w
 ShopMe, is your one-stop online store for all your needs! From makeup and clothing to food, appliances, and much more, we offer a wide variety of products to cater to every aspect of your life. Enjoy a seamless shopping experience with top-quality items and unbeatable deals.
 
 <p align="center">
-  <img src="./public/images/sc2.png">
+  <img src="./public/images/sc3.png">
 </p>
 
 
 <p align="left">
-  <img src="./public/sc3.png">
+  <img src="./public/images/sc2.png">
 </p>
 
 ## Project Tracking
@@ -18,7 +18,7 @@ ShopMe, is your one-stop online store for all your needs! From makeup and clothi
 This project was tracked using GitHub Projects. The GitHub Project Board was used to manage tasks, user stories, and progress.
 
 <p align="center">
-  <img src="./public/sc1.png">
+  <img src="./public/images/sc1.png">
 </p>
 
 ## Features

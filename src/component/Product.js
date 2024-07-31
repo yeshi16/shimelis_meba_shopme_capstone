@@ -11,7 +11,7 @@ function Product() {
     const [products, setProducts] = useState([])
     const [search, setSearch] = useState('');
 
-
+    // fetch all products  or search for an item
     const getProducts = async (searchWord) => {
 
         try {
@@ -38,6 +38,7 @@ function Product() {
         getProducts('')
     }, [])
 
+    // clear searched item and get all products
     const clearSearch = () => {
         setSearch('');
         getProducts('');

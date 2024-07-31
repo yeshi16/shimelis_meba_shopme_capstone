@@ -8,12 +8,7 @@ router.get('/', async (req, res) => {
 
 // create new user
 router.post('/', async (req, res) => {
-    // const name = req.body.name
     const {name, email} = req.body
-
-    // console.log(name + " " + email)
-    // res.send('You are registered')
-
     try{
         const db = getDb()
         const newUser = await db.collection('users').insertOne({name, email})

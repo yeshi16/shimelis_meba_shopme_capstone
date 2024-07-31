@@ -15,7 +15,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 function ReactRoutes() {
 
-    // the nav is not going to show on home page
+    // the nav bar is not going to show on home page
     const location = useLocation();
     const showNav = location.pathname !== '/';
 
