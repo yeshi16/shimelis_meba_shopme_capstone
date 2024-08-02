@@ -17,11 +17,11 @@ ShopMe, is your one-stop online store for all your needs! From makeup and clothi
 
 This project was tracked using GitHub Projects. The GitHub Project Board was used to manage tasks, user stories, and progress.
 
-### Link for the canban board to simulate Jira
-https://github.com/users/yeshi16/projects/3/views/1
+### Canban board to simulate Jira
+[Canban board](https://github.com/users/yeshi16/projects/3/views/1).
 
-### Link for User stories
-https://github.com/yeshi16/shimelis_meba_shopme_capstone/issues
+### User stories
+[User Stories](https://github.com/yeshi16/shimelis_meba_shopme_capstone/issues).
 
 
 <p align="center">
