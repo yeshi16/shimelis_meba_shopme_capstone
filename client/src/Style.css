@@ -1,0 +1,91 @@
+
+
+.carousel {
+    width: 65%; 
+    margin: 0 auto; 
+  }
+  
+  .carousel img {
+    height: 600px; 
+    object-fit: cover; 
+  }
+  
+.navbar {
+    background-color: #e2fffa;
+}
+.navHome {
+    background-color: #e2fffa;
+}
+.navbar-brand{
+    color: #0c4151
+}
+
+.d-inline-block {
+    margin-right: 10px;
+}
+
+.navText {
+    width: 800px;
+    color: #0c4151;
+}
+.navDiv {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+/*footer text*/
+pre {
+   color: #0c4151
+}
+/* h1 text*/
+.display-6 {
+  color: #0c4151
+}
+
+form{
+    width: 500px;
+   color: #0c4151
+}
+.form-control {
+    width: 500px;
+    height: 50px;
+}
+
+
+.btn {
+    background-color: #0c4151;
+    color: #e2fffa;
+}
+.backgroundContainer{
+    height:100vh;
+    background-color: #e2fffa;
+     
+}
+
+.footerCon {
+    background-color: #e2fffa;
+    padding: 10px;
+    color: #0c4151;
+    border-top: thick double  #0c4151;
+    
+}
+
+.footerPos {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+/*search box*/
+.input-group {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+.searchbox {
+    height: 60px;
+    color:  #0c4151;
+}
