@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import Footer from "../page/Footer"
 
 function Contact() {
     const navigate = useNavigate()
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
-    // const [Password, setPassword] = useState('')
+    const [password, setPassword] = useState('')
 
 
 // add user to db 
@@ -15,6 +15,7 @@ function Contact() {
         const postData = {
             name: name,
             email: email,
+            password: password
         }
         try {
             const response = await fetch('http://localhost:4000/register', {
@@ -37,8 +38,8 @@ function Contact() {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        if (!email || !name) {
-            alert('Add Name and Email ')
+        if (!email || !name || !password) {
+            alert('Fill all fields')
             return
         }
 
@@ -47,20 +48,20 @@ function Contact() {
 
         setName('')
         setEmail('')
+        setPassword('')
 
         // navigage to product page after submitting form
-        navigate('/products')
+        navigate('/login')
     }
 
     return (
         <div className="backgroundContainer">
             <h1 className="display-6 text-center">Register</h1>
-            {/* <h1>Register</h1> */}
+       
+            <form className="mx-auto p-2" >
 
-            <form className="mx-auto p-2" style={{ width: "200px;" }}>
-
-                <div class="mb-3">
-                    <label for="Input1" class="form-label">Name</label>
+                <div className="mb-3">
+                    <label htmlFor="Input1" className="form-label">Name</label>
                     <input
                         type="text"
                         className="form-control"
@@ -71,8 +72,8 @@ function Contact() {
                     />
                 </div>
 
-                <div class="mb-3">
-                    <label for="Input2" class="form-label">Email</label>
+                <div className="mb-3">
+                    <label htmlFor="Input2" className="form-label">Email</label>
                     <input
                         type="text"
                         className="form-control"
@@ -82,15 +83,26 @@ function Contact() {
                         onChange={(e) => setEmail(e.target.value)}
                     />
                 </div>
+                <div className="mb-3">
+                    <label htmlFor="Input3" className="form-label">Password</label>
+                    <input
+                        type="password"
+                        className="form-control"
+                        id="Input3"
+                        placeholder="Password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
+                </div>
 
                 <button type="button" className="btn " onClick={handleSubmit}>Register</button>
 
             </form>
 
-            {/* <p>Already Registered</p> */}
-            {/* <Link to='/products'>
+            <p className="text-center">Already Registered</p> 
+            <Link to='/login' className="linkCenter">
                 Login
-            </Link> */}
+            </Link>
             {/* <br /><br /> */}
             <div className="footerPos">
             <Footer />

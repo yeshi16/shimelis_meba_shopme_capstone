@@ -9,6 +9,7 @@ import ProductDisplay from "../page/ProductDisplay";
 import Contact from "../page/Contact";
 import Register from "../page/Register"
 import Footer from "../page/Footer";
+import Login from "../page/Login";
 
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 
@@ -31,6 +32,7 @@ function ReactRoutes() {
                 <Route path='/user' element={<User />} />
                 <Route path='/cart' element={<Cart />} />
                 <Route path='/contact' element={<Contact />} />
+                <Route path='/login' element={<Login />} />
                 <Route path='/register' element={<Register />} />
                 
             </Routes>

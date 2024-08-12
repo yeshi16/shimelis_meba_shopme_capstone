@@ -8,10 +8,10 @@ router.get('/', async (req, res) => {
 
 // create new user
 router.post('/', async (req, res) => {
-    const {name, email} = req.body
+    const {name, email, password} = req.body
     try{
         const db = getDb()
-        const newUser = await db.collection('users').insertOne({name, email})
+        const newUser = await db.collection('users').insertOne({name, email, password})
         res.json({message: 'new user added'})
     } catch (err) {
         console.log('Error adding user')

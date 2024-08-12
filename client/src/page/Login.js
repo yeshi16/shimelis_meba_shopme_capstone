@@ -6,7 +6,7 @@ function Login() {
     const navigate = useNavigate()
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
-    // const [Password, setPassword] = useState('')
+    const [password, setPassword] = useState('')
 
    
 
@@ -15,15 +15,20 @@ function Login() {
         const userData = {
             name: name,
             email: email,
+            password: password
+          
         }
         try{
-            const response = await fetch('http://localhost:4000/loginsss', {
+            const response = await fetch('http://localhost:4000/login', {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
                   },
-                  body: JSON.stringify(userData)
+                  
             })
+            if (!response.ok) {
+                throw new Error('Failed to login');
+            }
 
             const data = await response.json()
             console.log(data)
@@ -37,8 +42,8 @@ function Login() {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        if(!email || !name){
-            alert('Add Name and Email ')
+        if(!email || !name || !password){
+            alert('Fill all fields')
             return
         }
 
@@ -47,39 +52,61 @@ function Login() {
 
         setName('')
         setEmail('')
+        setPassword('')
         
          // navigage to login page
          navigate('/products')
     }
 
+    
+
     return (
-        <div>
-            <h1>Login</h1>
+        <div className="backgroundContainer">
+            <h1 className="display-6 text-center">Login</h1>
 
-            <form>
-            <label>Name</label>
-                <input
-                    type='text'
-                    id='name'
-                    name='name'
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                />
+            <form className="mx-auto p-2" >
 
-                <label>Email</label>
-                <input
-                    type='text'
-                    id='email'
-                    name='email'
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                />
+                <div className="mb-3">
+                    <label htmlFor="Input1" className="form-label">Name</label>
+                    <input
+                        type="text"
+                        className="form-control"
+                        id="Input1"
+                        placeholder="Name"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                    />
+                </div>
 
-                <button type='submit' onClick={handleSubmit}>Submit</button>
+                <div className="mb-3">
+                    <label htmlFor="Input2" className="form-label">Email</label>
+                    <input
+                        type="text"
+                        className="form-control"
+                        id="Input2"
+                        placeholder="Email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="Input3" className="form-label">Password</label>
+                    <input
+                        type="password"
+                        className="form-control"
+                        id="Input3"
+                        placeholder="Password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
+                </div>
+
+                <button type="button" className="btn " onClick={handleSubmit}>Register</button>
+
             </form>
 
-            <p>Didn't Register</p>
-            <Link to='/register'>
+            <p className="text-center">Didn't Register</p>
+            <Link to='/register' className="linkCenter2">
                 Register
             </Link>
         </div>
